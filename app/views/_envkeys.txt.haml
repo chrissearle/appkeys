@@ -1,0 +1,6 @@
+- if envkeys.count > 0
+  \
+  \.env
+  \
+  - envkeys.ordered.each do |envkey|
+    = "#{envkey.name}=#{envkey.value}"

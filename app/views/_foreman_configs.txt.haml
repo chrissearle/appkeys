@@ -1,0 +1,6 @@
+- if foreman_configs.count > 0
+  \
+  \.foreman
+  \
+  - foreman_configs.ordered.each do |config|
+    = "#{config.name}: #{config.value}"
