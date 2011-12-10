@@ -1,0 +1,19 @@
+- @hosts.each do |host|
+  = host.hostname
+  - if host.envkeys.count > 0
+    \
+    \.env
+    \
+    - host.envkeys.ordered.each do |envkey|
+      = "#{envkey.name}=#{envkey.value}"
+  - if host.foreman_configs.count > 0
+    \
+    \.foreman
+    \
+    - host.foreman_configs.ordered.each do |config|
+      = "#{config.name}=#{config.value}"
+    \
+  \
+  \
+  \
+  \

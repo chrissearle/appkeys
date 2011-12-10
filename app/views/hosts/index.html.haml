@@ -17,4 +17,6 @@
         = link_to t('host.action.delete'), host_path(host), :confirm => t('delete.confirm'), :method => :delete
 
 
+%p= link_to t('host.link.keys.file'), hosts_path(:format => :txt), :target => "_blank"
+
 %p= link_to t('hosts.link.add'), new_host_path

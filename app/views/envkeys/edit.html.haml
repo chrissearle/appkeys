@@ -1,0 +1,5 @@
+%h1= t('envkey.edit.title')
+
+%h2= @host.hostname
+
+= render :partial => 'envkey', :locals => { :host => @host, :envkey => @envkey }
