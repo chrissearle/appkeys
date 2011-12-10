@@ -12,7 +12,9 @@
       %td= link_to host.hostname, host_path(host)
       %td= host.envkeys.count
       %td= host.foreman_configs.count
-      %td= link_to t('host.action.edit'), edit_host_path(host)
+      %td
+        = link_to t('host.action.edit'), edit_host_path(host)
+        = link_to t('host.action.delete'), host_path(host), :confirm => t('delete.confirm'), :method => :delete
 
 
 %p= link_to t('hosts.link.add'), new_host_path

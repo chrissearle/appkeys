@@ -1,6 +1,6 @@
 class ForemanConfigsController < ApplicationController
   before_filter :get_host
-  before_filter :get_foreman_config, :only => [:destroy]
+  before_filter :get_foreman_config, :only => [:destroy, :edit, :update]
 
   def new
     @foreman_config = ForemanConfig.new
@@ -25,6 +25,18 @@ class ForemanConfigsController < ApplicationController
     @foreman_config.destroy
 
     redirect_to host_path(@host)
+  end
+
+  def edit
+  end
+
+  def update
+    if @foreman_config.update_attributes(params[:foreman_config])
+      flash[:notice] = t('flash.config.save.ok')
+      redirect_to host_path(@host)
+    else
+      render :action => :edit
+    end
   end
 
   private

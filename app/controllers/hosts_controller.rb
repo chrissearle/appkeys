@@ -1,5 +1,5 @@
 class HostsController < ApplicationController
-  before_filter :get_host, :only => [:show, :edit, :update]
+  before_filter :get_host, :only => [:show, :edit, :update, :destroy]
 
   def index
     @hosts = Host.ordered
@@ -33,6 +33,14 @@ class HostsController < ApplicationController
     else
       render :action => :edit
     end
+  end
+
+  def destroy
+    flash[:notice] = t('flash.deleted')
+
+    @host.destroy
+
+    redirect_to hosts_path
   end
 
   private

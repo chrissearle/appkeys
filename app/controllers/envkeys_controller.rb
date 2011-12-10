@@ -1,6 +1,6 @@
 class EnvkeysController < ApplicationController
   before_filter :get_host
-  before_filter :get_envkey, :only => [:destroy]
+  before_filter :get_envkey, :only => [:destroy, :edit, :update]
 
   def new
     @envkey = Envkey.new
@@ -25,6 +25,18 @@ class EnvkeysController < ApplicationController
     @envkey.destroy
 
     redirect_to host_path(@host)
+  end
+
+  def edit
+  end
+
+  def update
+    if @envkey.update_attributes(params[:envkey])
+      flash[:notice] = t('flash.envkey.save.ok')
+      redirect_to host_path(@host)
+    else
+      render :action => :edit
+    end
   end
 
   private

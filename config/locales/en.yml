@@ -1,8 +1,4 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
   hosts:
     title: "Hosts"
     link:
@@ -34,8 +30,10 @@ en:
     key:
       action:
         delete: "Delete"
+        edit: "Edit"
     action:
       edit: "Edit"
+      delete: "Delete"
   flash:
     host:
       save:
@@ -55,11 +53,15 @@ en:
         commit: "Save key"
     link:
       back: "Back to host"
+    edit:
+      title: "Edit key"
   config:
     new:
       title: "New foreman config"
     buttons:
       new:
         commit: "Save foreman config"
+    edit:
+      title: "Edit foreman config"
   delete:
-    confirm: "Sure?"
+    confirm: "Delete - Sure?"
