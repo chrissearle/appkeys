@@ -1,0 +1,39 @@
+%h1= @host.hostname
+
+#env{ :class => 'tableblock' }
+  %h2= t('host.table.title.env')
+
+  %table
+    %thead
+      %tr
+        %th= t('host.table.keyname')
+        %th= t('host.table.value')
+        %th
+    - @host.envkeys.ordered.each do |envkey|
+      %tr
+        %td= envkey.name
+        %td= envkey.value
+        %td= link_to t('host.key.action.delete'), host_envkey_path(@host, envkey), :confirm => t('delete.confirm'), :method => :delete
+
+  %p= link_to t('host.link.add.key'), new_host_envkey_path(@host)
+
+#foreman{ :class => 'tableblock' }
+  %h2= t('host.table.title.foreman')
+
+  %table
+    %thead
+      %tr
+        %th= t('host.table.keyname')
+        %th= t('host.table.value')
+        %th
+    - @host.foreman_configs.ordered.each do |config|
+      %tr
+        %td= config.name
+        %td= config.value
+        %td= link_to t('host.key.action.delete'), host_foreman_config_path(@host, config), :confirm => t('delete.confirm'), :method => :delete
+
+  %p= link_to t('host.link.add.config'), new_host_foreman_config_path(@host)
+
+%p= link_to t('host.link.keys.file'), host_path(@host, :format => :txt), :target => "_blank"
+
+%p= link_to t('hosts.link.back'), hosts_path

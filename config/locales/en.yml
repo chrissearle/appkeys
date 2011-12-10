@@ -1,0 +1,65 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  hosts:
+    title: "Hosts"
+    link:
+      add: "Add host"
+      back: "Back to hosts"
+    new:
+      title: "Add host"
+    table:
+      hostname: "Hostname"
+      count: "Key count"
+      config:
+        count: "Foreman key count"
+    edit:
+      title: "Edit host"
+  host:
+    buttons:
+      new:
+        commit: "Save host"
+    link:
+      add:
+        key: "Add key"
+        config: "Add config"
+      keys:
+        file: ".env/.foreman"
+    table:
+      title:
+        env: "Environment keys"
+        foreman: "Foreman config"
+    key:
+      action:
+        delete: "Delete"
+    action:
+      edit: "Edit"
+  flash:
+    host:
+      save:
+        ok: "Host saved"
+    envkey:
+      save:
+        ok: "Key saved"
+    config:
+      save:
+        ok: "Config saved"
+    deleted: "Deleted"
+  envkey:
+    new:
+      title: "Add key"
+    buttons:
+      new:
+        commit: "Save key"
+    link:
+      back: "Back to host"
+  config:
+    new:
+      title: "New foreman config"
+    buttons:
+      new:
+        commit: "Save foreman config"
+  delete:
+    confirm: "Sure?"

@@ -1,0 +1,18 @@
+%h1= t('hosts.title')
+
+%table
+  %thead
+    %tr
+      %th= t('hosts.table.hostname')
+      %th= t('hosts.table.count')
+      %th= t('hosts.table.config.count')
+      %th
+  - @hosts.each do |host|
+    %tr
+      %td= link_to host.hostname, host_path(host)
+      %td= host.envkeys.count
+      %td= host.foreman_configs.count
+      %td= link_to t('host.action.edit'), edit_host_path(host)
+
+
+%p= link_to t('hosts.link.add'), new_host_path

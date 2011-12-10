@@ -1,0 +1,9 @@
+\.env
+\
+- @host.envkeys.ordered.each do |envkey|
+  = "#{envkey.name}=#{envkey.value}"
+\
+\.foreman
+\
+- @host.foreman_configs.ordered.each do |config|
+  = "#{config.name}=#{config.value}"

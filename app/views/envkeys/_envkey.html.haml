@@ -1,0 +1,9 @@
+= semantic_form_for [host, envkey] do |f|
+  = f.inputs do
+    = f.input :name
+    = f.input :value
+
+  = f.buttons do
+    = f.commit_button t('envkey.buttons.new.commit')
+
+%p= link_to t('envkey.link.back'), host_path(host)

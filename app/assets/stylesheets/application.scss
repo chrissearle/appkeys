@@ -1,0 +1,60 @@
+/*
+ *= require reset
+ *= require formtastic
+ *= require formtastic_changes
+ *= require_self
+*/
+
+$main_padding: 10px;
+$main_margin: 10px;
+$thin_padding: 3px;
+
+body {
+    padding: $main_padding;
+    font-family: sans-serif;
+}
+
+h1 {
+    padding-bottom: $main_padding;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+h2 {
+    padding-bottom: $main_padding;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+@mixin thinborder {
+    border: solid 1px silver;
+}
+
+table {
+    margin: $main_margin;
+    border-collapse: collapse;
+    @include thinborder;
+
+    th {
+        padding: $thin_padding;
+        text-align: left;
+        font-weight: bold;
+        @include thinborder;
+    }
+
+    td {
+        padding: $thin_padding;
+        text-align: left;
+        @include thinborder;
+    }
+}
+
+p {
+    padding-bottom: $thin_padding;
+}
+
+.tableblock {
+    @include thinborder;
+    padding: $main_padding;
+    margin: $main_margin;
+}

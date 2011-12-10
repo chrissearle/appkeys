@@ -1,0 +1,5 @@
+%h1= t('config.new.title')
+
+%h2= @host.hostname
+
+= render :partial => 'foreman_config', :locals => { :host => @host, :foreman_config => @foreman_config }
